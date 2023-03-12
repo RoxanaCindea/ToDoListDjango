@@ -1,0 +1,14 @@
+{% extends 'html_base.html' %}
+
+{% block title %} Update Task {% endblock %}
+
+{% block content %}
+    <h3>Task Form</h3>
+    <a href="{% url 'list-of-tasks' %}">Go back</a>
+    <form method="post" action="">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+{% endblock %}
